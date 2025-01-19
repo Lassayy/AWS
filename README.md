@@ -1,4 +1,4 @@
-# Procédure du TP : Création d'une infrastructure AWS pour PrestaShop
+# Architecture Cloud CMS : EC2 pour l'application, RDS pour la base et S3 pour le stockage
 
 Dans ce TP, nous allons créer une infrastructure complète pour héberger le CMS PrestaShop, avec les éléments suivants :
 

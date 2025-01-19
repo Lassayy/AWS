@@ -159,22 +159,23 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
 
 4. **Finalisation :**
    - Faites défiler jusqu'en bas et cliquez sur **Créer une base de données**.
-   - Attendez que la création soit terminée et vérifiez que le statut est "En cours d'exécution".
-  
-  
-  Creation d'un instance RDS pour héberger la base de donné du CMS :
-Ensuiite il faut creer un instance RDS
-Tapez RDS dans la barre de recherche sur la consol aws
-
-   ![Image Alt](https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)
+   - Attendez que la création soit terminée et vérifiez que le statut est "Disponible" avant de passer à la suite.
 
 
-Choisir une méthode de création de bases de données : création standard 
-Options de moteur : MySQL
-Modèles : Offre Gratuite 
-Identifiant d'instance de base de données : database-prestashop
-Identifiant principal : admin
-Mot de passe principal : Azerty123!
-Connectivité : Se connecter à une ressource de calcul EC2 et selectionner votre instance EC2 dans la liste déroulante en dessous.
-Aller tout en bas puis créer une base de donnée
-Attendre la fin de la création et regarder le status quil soit " En cours d'exécution "
+## Étape 6 : Aller sur l'instalation assistant pour configurer le CMS
+aller dans le Résumé de l'instance de votre EC2 et copier l'addresse DNS IPv4 public 
+
+![Image Alt](https://github.com/Lassayy/AWS/blob/dd04fff31b4397eb31610077f6bf94441c453f04/DNS%20IPv4%20public.png)
+
+taper comme ceci votre adresse dans un navigateur internet : 
+http://DNS IPv4 public/install
+exemple pour moi :
+http://ec2-54-91-65-108.compute-1.amazonaws.com/install
+
+vous aller voir l'installation assistant de prestaschop
+![Image Alt](https://github.com/Lassayy/AWS/blob/78a2ad0e98f632d4345dafc53f0b4b72c906209d/assistantprestashop.png)
+Cliquer sur francais
+cochez J'accepte les termes et conditions du contrat ci-dessus.
+paramettez comme bon vous semble:
+![Image Alt](https://github.com/Lassayy/AWS/blob/72569e3a1a13e2c50bc9cdd7a26ddbee13068a6a/information.png)
+

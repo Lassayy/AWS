@@ -1,3 +1,4 @@
-je vais montrer la proc du tp 
+Procédure du TP - Creation EC2 pour héberger le CMS prestaschop Création d'un RDS pour la base de donnée et création d'un S3 pour le stockage et mise en cache des fichier.  
 
-![Image Alt](https://github.com/Lassayy/AWS/blob/b3aa5d2dac602ed6879863acc34135638edbf974/aws.png)
+Création d'un EC2 sur la consol AWS 
+dans la barre de recherche tapez EC2 -> et cliquez sur " lancer une instance "

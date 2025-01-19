@@ -137,8 +137,44 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
 2. **Vérifiez l'existence de l'archive :**
    - Vous devriez voir un fichier nommé `prestashop_full_backup.zip` dans le répertoire `/var/www/html`.
    - Conservez ce fichier pour une utilisation ultérieure lors de la configuration du S3.
+
+## Étape 5 : Création d'une instance RDS pour héberger la base de données du CMS
+
+1. **Accéder au service RDS :**
+   - Tapez **RDS** dans la barre de recherche sur la console AWS.
+
+   ![Image Alt](https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)
+
+2. **Configurer l'instance RDS :**
+   - **Choisir une méthode de création de bases de données :** Création standard.
+   - **Options de moteur :** MySQL.
+   - **Modèles :** Offre Gratuite.
+   - **Identifiant d'instance de base de données :** `database-prestashop`.
+   - **Identifiant principal :** `admin`.
+   - **Mot de passe principal :** `Azerty123!`.
+
+3. **Connectivité :**
+   - Sélectionnez **Se connecter à une ressource de calcul EC2**.
+   - Choisissez votre instance EC2 dans la liste déroulante.
+
+4. **Finalisation :**
+   - Faites défiler jusqu'en bas et cliquez sur **Créer une base de données**.
+   - Attendez que la création soit terminée et vérifiez que le statut est "En cours d'exécution".
   
+  
+  Creation d'un instance RDS pour héberger la base de donné du CMS :
 Ensuiite il faut creer un instance RDS
 Tapez RDS dans la barre de recherche sur la consol aws
 
    ![Image Alt](https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)
+
+
+Choisir une méthode de création de bases de données : création standard 
+Options de moteur : MySQL
+Modèles : Offre Gratuite 
+Identifiant d'instance de base de données : database-prestashop
+Identifiant principal : admin
+Mot de passe principal : Azerty123!
+Connectivité : Se connecter à une ressource de calcul EC2 et selectionner votre instance EC2 dans la liste déroulante en dessous.
+Aller tout en bas puis créer une base de donnée
+Attendre la fin de la création et regarder le status quil soit " En cours d'exécution "

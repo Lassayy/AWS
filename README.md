@@ -162,20 +162,43 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
    - Attendez que la création soit terminée et vérifiez que le statut est "Disponible" avant de passer à la suite.
 
 
-## Étape 6 : Aller sur l'instalation assistant pour configurer le CMS
-aller dans le Résumé de l'instance de votre EC2 et copier l'addresse DNS IPv4 public 
+## Étape 6 : Aller sur l'installation assistant pour configurer le CMS
 
-![Image Alt](https://github.com/Lassayy/AWS/blob/dd04fff31b4397eb31610077f6bf94441c453f04/DNS%20IPv4%20public.png)
+1. **Récupérez l'adresse DNS IPv4 publique de votre instance EC2 :**
+   - Allez dans le **Résumé de l'instance** de votre EC2 et copiez l'adresse DNS IPv4 publique.
 
-taper comme ceci votre adresse dans un navigateur internet : 
-http://DNS IPv4 public/install
-exemple pour moi :
-http://ec2-54-91-65-108.compute-1.amazonaws.com/install
+   ![Image Alt](https://github.com/Lassayy/AWS/blob/dd04fff31b4397eb31610077f6bf94441c453f04/DNS%20IPv4%20public.png)
 
-vous aller voir l'installation assistant de prestaschop
-![Image Alt](https://github.com/Lassayy/AWS/blob/78a2ad0e98f632d4345dafc53f0b4b72c906209d/assistantprestashop.png)
-Cliquer sur francais
-cochez J'accepte les termes et conditions du contrat ci-dessus.
-paramettez comme bon vous semble:
-![Image Alt](https://github.com/Lassayy/AWS/blob/72569e3a1a13e2c50bc9cdd7a26ddbee13068a6a/information.png)
+2. **Accédez à l'installation PrestaShop :**
+   - Tapez dans un navigateur internet :
+     ```
+     http://DNS_IPv4_public/install
+     ```
+   - Exemple :
+     ```
+     http://ec2-54-91-65-108.compute-1.amazonaws.com/install
+     ```
+
+3. **Installation de PrestaShop :**
+   - Vous arriverez sur l'assistant d'installation de PrestaShop.
+
+     ![Image Alt](https://github.com/Lassayy/AWS/blob/78a2ad0e98f632d4345dafc53f0b4b72c906209d/assistantprestashop.png)
+
+4. **Configuration initiale :**
+   - Choisissez la langue (ex. : français).
+   - Cochez **"J'accepte les termes et conditions du contrat ci-dessus"**.
+   - Configurez les paramètres comme bon vous semble.
+
+     ![Image Alt](https://github.com/Lassayy/AWS/blob/72569e3a1a13e2c50bc9cdd7a26ddbee13068a6a/information.png)
+
+5. **Connexion à la base de données :**
+   - Renseignez les informations de votre instance RDS créée à l'étape 5.
+   - **Adresse du serveur de la base :** Récupérez le **point de terminaison** dans l'onglet **Connectivité et sécurité** de votre instance RDS.
+
+     ![Image Alt](https://github.com/Lassayy/AWS/blob/b74bbe1e31dc1668dd032805de5a32022e704d20/Assistant%20d'installation.png)
+
+6. **Finalisation :**
+   - Cliquez sur **"Essayer de créer la base de données automatiquement"**.
+   - Une fois le message **"Base de données créée"** affiché, cliquez sur **Suivant**.
+   - Attendez la fin de l'installation de la boutique.
 

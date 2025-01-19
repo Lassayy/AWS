@@ -1,6 +1,6 @@
 # Architecture Cloud CMS : EC2 pour l'application, RDS pour la base et S3 pour le stockage
 
-Dans ce TP, nous allons créer une infrastructure complète pour héberger le CMS PrestaShop, avec les éléments suivants :
+Nous allons créer une infrastructure complète pour héberger le CMS PrestaShop, avec les éléments suivants :
 
 - **Création d'une instance EC2** pour héberger le CMS.
 - **Création d'un RDS** pour la base de données.

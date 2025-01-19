@@ -265,4 +265,7 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
   
    ![Image Alt](https://github.com/Lassayy/AWS/blob/ef29d2355b71dec2d0bc28db3ac5f7c4d39d5626/chargement%20cache%20reussis.png)
 
+
+Vous avez terminé la mise en place de votre infrastructure, qui comprend une instance EC2 pour le CMS, un RDS pour la base de données et un bucket S3 pour le stockage des fichiers ainsi que pour la gestion de la mise en cache.
+
 ---

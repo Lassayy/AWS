@@ -141,4 +141,4 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
 Ensuiite il faut creer un instance RDS
 Tapez RDS dans la barre de recherche sur la consol aws
 
-   ![Image].(https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)
+   ![Image Alt](https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)

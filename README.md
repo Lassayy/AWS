@@ -95,23 +95,33 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
      sudo wget "https://assets.prestashop3.com/dst/edition/corporate/8.2.0/prestashop_edition_basic_version_8.2.0.zip?token=9c3095b0a0" -O prestashop_8.2.0.zip
      ```
 
-2. **Décompression de PrestaShop :**
+2. **Décompression de prestashop_8.2.0.zip :**
    ```bash
    sudo unzip prestashop_8.2.0.zip
    ```
 
-3. **Suppression du fichier zip :**
+3. **Suppression du fichier prestashop_8.2.0.zip :**
    ```bash
    sudo rm prestashop_8.2.0.zip
    ```
-
-4. **Permissions :**
+   
+4. **Décompression de prestashop.zip :** (Cliquez sur A quand vous verrez un message apparaître)
+   ```bash
+   sudo unzip prestashop.zip
+   ```
+   
+5. **Suppression du fichier prestashop.zip :** 
+   ```bash
+   sudo rm prestashop.zip
+   ```
+   
+6. **Permissions :**
    ```bash
    sudo chown -R www-data:www-data /var/www/html
    sudo chmod -R 755 /var/www/html
    ```
 
-5. **Activation du module rewrite :**
+7. **Activation du module rewrite :**
    ```bash
    sudo a2enmod rewrite
    sudo systemctl restart apache2

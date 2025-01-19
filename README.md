@@ -201,4 +201,14 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
    - Cliquez sur **"Essayer de créer la base de données automatiquement"**.
    - Une fois le message **"Base de données créée"** affiché, cliquez sur **Suivant**.
    - Attendez la fin de l'installation de la boutique.
+  
+7. **Supprimez le dossier `install` :**
+   - Une fois l'installation terminée, vous devez supprimer le dossier `install` de votre EC2 dans `/var/www/html` :
+     ```bash
+     sudo rm -rf /var/www/html/install
+     ```
 
+8. **Accédez à l'administration de votre boutique :**
+   - Cliquez sur **"Gérer votre boutique"** pour procéder à la configuration de celle-ci.
+
+     ![Image Alt](https://github.com/Lassayy/AWS/blob/ffd1b2a263889d123fdaf61f5913d621ebaeb07a/black-office.png)

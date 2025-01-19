@@ -212,3 +212,10 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
    - Cliquez sur **"Gérer votre boutique"** pour procéder à la configuration de celle-ci.
 
      ![Image Alt](https://github.com/Lassayy/AWS/blob/ffd1b2a263889d123fdaf61f5913d621ebaeb07a/black-office.png)
+
+   - En cliquant sur "Gérer votre boutique", l'URL va automatiquement pointer sur le serveur dans `/var/www/html/admin`. Toutefois, il est possible que sur votre serveur, le dossier `/admin` soit renommé automatiquement, par exemple en `admin346gmsyozgvxdmpqjq9`.
+   - Vous devez donc adapter votre URL pour accéder à l'administration du prestashop comme suit :
+     ```
+     http://ec2-54-91-65-108.compute-1.amazonaws.com/admin346gmsyozgvxdmpqjq9
+
+     

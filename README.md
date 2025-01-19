@@ -127,17 +127,6 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
    sudo systemctl restart apache2
    ```
 
-## Étape 4 : Création d'une archive de sauvegarde
-
-1. **Créer une archive des fichiers importants de PrestaShop :**
-   ```bash
-   sudo zip -r prestashop_full_backup.zip img upload download themes var/cache cache
-   ```
-
-2. **Vérifiez l'existence de l'archive :**
-   - Vous devriez voir un fichier nommé `prestashop_full_backup.zip` dans le répertoire `/var/www/html`.
-   - Conservez ce fichier pour une utilisation ultérieure lors de la configuration du S3.
-
 ## Étape 5 : Création d'une instance RDS pour héberger la base de données du CMS
 
 1. **Accéder au service RDS :**
@@ -217,5 +206,128 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
    - Vous devez donc adapter votre URL pour accéder à l'administration du prestashop comme suit :
      ```
      http://ec2-54-91-65-108.compute-1.amazonaws.com/admin346gmsyozgvxdmpqjq9
+## Étape 7 : Mise en cache sur un bucket S3
 
-     
+### Activer les options 3C sur PrestaShop
+1. **Accédez à l'interface d'administration :**
+   - Allez dans **Paramètres avancés > Performances**.
+   - Dans la section **"CCC (Concaténation, Compression et mise en Cache)"** :
+     - Activez les options en mettant les cases sur **Oui**.
+
+   ![Image Alt](https://github.com/Lassayy/AWS/blob/47c8135cdd0f23a97ae8054d0fa0c7b97813e5dc/ccc.png)
+
+2. **Cliquez sur Enregistrer** après avoir activé ces options.
+
+---
+
+### Créer une archive pour le stockage sur un S3
+1. **Connectez-vous à votre instance EC2** et allez dans le répertoire `/var/www/html` :
+   ```bash
+   cd /var/www/html
+   ```
+
+2. **Créer une archive des fichiers importants de PrestaShop :**
+   ```bash
+   sudo zip -r prestashop_full_backup.zip img upload download themes var/cache cache
+   ```
+
+3. **Vérifiez l'existence de l'archive :**
+   - Vous devriez voir un fichier nommé `prestashop_full_backup.zip` dans le répertoire `/var/www/html`.
+
+4. **Téléchargez le fichier ZIP en local sur votre PC :**
+   - Ouvrez un navigateur et entrez l'URL suivante en l'adaptant à votre serveur :
+     ```
+     http://ec2-54-91-65-108.compute-1.amazonaws.com/prestashop_full_backup.zip
+     ```
+   - Un fichier va se télécharger. Décompressez-le sur votre ordinateur.
+
+---
+
+### Création d'un bucket S3
+1. **Accédez au service S3 :**
+   - Dans la barre de recherche de la console AWS, tapez **S3** et cliquez sur **Créer un compartiment**.
+
+   ![Image Alt](https://github.com/Lassayy/AWS/blob/1f2191e35afe6ac74ea2459d134b70b2aecf8bab/s3.png)
+
+2. **Configurer le bucket :**
+   - **Nom du compartiment :** `s3-prestashop`.
+   - **Paramètres de blocage de l'accès public pour ce compartiment :**
+     - Décochez toutes les cases pour autoriser l'accès public si nécessaire.
+
+3. **Créer le compartiment :**
+   - Faites défiler jusqu'en bas et cliquez sur **Créer un compartiment**.
+
+4. **Téléchargez les fichiers dans le bucket :**
+   - Accédez à votre bucket S3 fraîchement créé.
+   - Cliquez sur **Charger** et ajoutez un dossier.
+   - Sélectionnez votre dossier décompressé `prestashop_full_backup`.
+   - Cliquez sur **Charger** et attendez la fin du chargement.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Étape 7 : Mise en cache sur un bucket S3
+
+Activer les options 3C sur PrestaShop
+     Accédez à l'interface d'administration :
+
+Paramètres avancés > Performances.
+Dans la section "CCC (Concaténation, Compression et mise en Cache)" :
+mettez les case sur oui 
+ ![Image Alt](https://github.com/Lassayy/AWS/blob/47c8135cdd0f23a97ae8054d0fa0c7b97813e5dc/ccc.png)
+Cliquez sur Enregistrer après avoir activé ces options.
+
+Créer une archive pour le stockage sur un S3
+Aller sur l'instance ec2 dans /var/www/html et faire ceci 
+Création d'une archive de sauvegarde
+
+1. **Créer une archive des fichiers importants de PrestaShop :**
+   ```bash
+   sudo zip -r prestashop_full_backup.zip img upload download themes var/cache cache
+   ```
+
+2. **Vérifiez l'existence de l'archive :**
+   - Vous devriez voir un fichier nommé `prestashop_full_backup.zip` dans le répertoire `/var/www/html`.
+  
+Télécharger le .zip en local sur votre pc 
+mettre ceci dans votre navigateur en l'adaptant pour vous un ficher va se téléchargrez décompressez le
+http://ec2-54-91-65-108.compute-1.amazonaws.com/prestashop_full_backup.zip
+
+
+Création d'un bucket S3
+Dans la barre de recherhce le la consol aws tapez S3 et cliquez sur créer un compartiment :
+ ![Image Alt](https://github.com/Lassayy/AWS/blob/1f2191e35afe6ac74ea2459d134b70b2aecf8bab/s3.png)
+
+Nom du compartiment : s3-prestashop
+ Paramètres de blocage de l'accès public pour ce compartiment : décocher toute les cases.
+ aller en bas et cliquer sur créer un compartiment
+ aller sur le s3 que vous avez créer et cliquer sur charger et ajouter un dossier selectionner votre archive que vous avez décompresser "prestashop_full_backup" et enfin cliquez sur charger et attendre la fin du chargement 
+
+ 

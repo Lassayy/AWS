@@ -137,3 +137,8 @@ Dans ce TP, nous allons créer une infrastructure complète pour héberger le CM
 2. **Vérifiez l'existence de l'archive :**
    - Vous devriez voir un fichier nommé `prestashop_full_backup.zip` dans le répertoire `/var/www/html`.
    - Conservez ce fichier pour une utilisation ultérieure lors de la configuration du S3.
+  
+Ensuiite il faut creer un instance RDS
+Tapez RDS dans la barre de recherche sur la consol aws
+
+   ![Image].(https://github.com/Lassayy/AWS/blob/f2047b9eb1a475a6cf53c136b69dd5bef7fbc9c0/rds.png)
